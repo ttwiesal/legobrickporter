@@ -9,7 +9,8 @@
   "scripts": {
     "start": "node index.js --order=./samples/order.json --apiKey=1234",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "lint": "eslint . --ext .js"
   },
   "repository": {
     "type": "git",
