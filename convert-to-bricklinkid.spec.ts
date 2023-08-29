@@ -27,6 +27,15 @@ describe('convert-to-bricklinkid.js', () => {
             LEGO: ['10509'],
           },
         },
+        color: {
+          external_ids: {
+            BrickLink: { ext_ids: ['1'] },
+            BrickOwl: ['11'],
+            Brickset: ['1'],
+            LDraw: ['0'],
+            LEGO: ['1'],
+          },
+        },
       },
       status: 200,
       statusText: 'Ok',
@@ -38,10 +47,12 @@ describe('convert-to-bricklinkid.js', () => {
       {
         quantity: 1,
         id: '10352c01pb01',
+        color: '1',
       },
       {
         quantity: 2,
         id: '10352c01pb01',
+        color: '1',
       },
     ];
     const actual = await converter.parseOrder(order);

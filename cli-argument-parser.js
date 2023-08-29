@@ -6,7 +6,7 @@ const validator = {
       if (!value) throw new Error('No path to order provided! Use --order');
     }
     if (prop === 'apiKey') {
-      if (!value) throw new Error('No path to order apiKey! Use --apiKey');
+      if (!value) throw new Error('No apiKey set! Use --apiKey');
     }
 
     obj[prop] = value;
@@ -26,11 +26,12 @@ const parseAllCliArguments = function () {
 };
 
 const getCliArguments = () => {
-  const { order } = parseAllCliArguments();
+  const { order, apiKey } = parseAllCliArguments();
 
   try {
     const validatedArgs = new Proxy({}, validator);
     validatedArgs.order = order;
+    validatedArgs.apiKey = apiKey;
     return validatedArgs;
   } catch (error) {
     console.error(chalk.bold.bgRed(error.message));

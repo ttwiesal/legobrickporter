@@ -6,12 +6,14 @@
 
   if (cliArguments) {
     const fileContent = require('./file-loader.js')(cliArguments.order);
-    console.log(fileContent);
 
     require('./convert-to-bricklinkid.js')
       .parseOrder(JSON.parse(fileContent))
       .then((order) => {
         console.log(order);
+
+        // write to csv file
+        require('./exporter/bricklink-xml-generator.js')(order);
       });
   }
 })();

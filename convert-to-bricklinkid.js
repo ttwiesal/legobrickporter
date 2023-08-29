@@ -15,7 +15,7 @@ const loadBricklinkid = async (sku) => {
       console.log(res.status);
     }
 
-    return res.data.part.external_ids.BrickLink[0];
+    return { bricklinkId: res.data.part.external_ids.BrickLink[0], color: res.data.color.external_ids.BrickLink.ext_ids[0] };
   } catch (error) {
     console.error(error);
   }
@@ -24,9 +24,9 @@ const loadBricklinkid = async (sku) => {
 const convert = async (order) => {
   const convertedOrder = [];
 
-  for (orderItem of order.slice(0, 5)) {
-    const id = await loadBricklinkid(orderItem.sku);
-    convertedOrder.push({ id, quantity: orderItem.quantity });
+  for (orderItem of order) {
+    const { bricklinkId, color } = await loadBricklinkid(orderItem.sku);
+    convertedOrder.push({ id: bricklinkId, color, quantity: orderItem.quantity });
 
     await new Promise((resolve) => setTimeout(resolve, 1000));
   }
