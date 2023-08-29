@@ -24,7 +24,7 @@ const loadBricklinkid = async (sku) => {
 const convert = async (order) => {
   const convertedOrder = [];
 
-  for (orderItem of order) {
+  for (let orderItem of order) {
     const { bricklinkId, color } = await loadBricklinkid(orderItem.sku);
     convertedOrder.push({ id: bricklinkId, color, quantity: orderItem.quantity });
 
