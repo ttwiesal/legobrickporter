@@ -1,5 +1,4 @@
 const fs = require('fs');
-const { parse } = require('path');
 
 const parseToXml = (data) => {
   const content = data.reduce((acc, item) => {

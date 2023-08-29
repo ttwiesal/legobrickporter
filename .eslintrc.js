@@ -22,5 +22,6 @@ module.exports = {
   rules: {},
   globals: {
     __dirname: true,
+    process: true,
   },
 };
