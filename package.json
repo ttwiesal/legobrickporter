@@ -7,7 +7,7 @@
     "legobrickporter": "./index.js"
   },
   "scripts": {
-    "start": "node index.js --order=./samples/order.json --apiKey=1234",
+    "start": "node index.js --order=./samples/order.json --output=./output.xml --apiKey=1234",
     "test": "jest",
     "test:watch": "jest --watch",
     "lint": "eslint . --ext .js"

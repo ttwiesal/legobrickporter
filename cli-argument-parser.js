@@ -26,12 +26,13 @@ const parseAllCliArguments = function () {
 };
 
 const getCliArguments = () => {
-  const { order, apiKey } = parseAllCliArguments();
+  const { order, apiKey, outputPath } = parseAllCliArguments();
 
   try {
     const validatedArgs = new Proxy({}, validator);
     validatedArgs.order = order;
     validatedArgs.apiKey = apiKey;
+    validatedArgs.outputPath = outputPath;
     return validatedArgs;
   } catch (error) {
     console.error(chalk.bold.bgRed(error.message));

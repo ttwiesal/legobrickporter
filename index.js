@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+const fs = require('fs');
+
 (function run() {
   const cliArguments = require('./cli-argument-parser.js')();
   global.cliArguments = cliArguments;
@@ -12,8 +14,13 @@
       .then((order) => {
         console.log(order);
 
-        // write to csv file
-        require('./exporter/bricklink-xml-generator.js')(order);
+        const xml = require('./exporter/bricklink-xml-generator.js')(order);
+
+        fs.writeFile(cliArguments.outputPath, xml, (err) => {
+          if (err) {
+            console.error(err);
+          }
+        });
       });
   }
 })();

@@ -18,15 +18,22 @@ const loadBricklinkid = async (sku) => {
     return { bricklinkId: res.data.part.external_ids.BrickLink[0], color: res.data.color.external_ids.BrickLink.ext_ids[0] };
   } catch (error) {
     console.error(error);
+    return { bricklinkId: null, color: null };
   }
 };
 
 const convert = async (order) => {
+  const itemGroups = order.orderDetailsV2.itemGroups;
+
+  const items = itemGroups.reduce((acc, itemGroup) => {
+    return [...acc, ...itemGroup.items];
+  }, []);
+
   const convertedOrder = [];
 
-  for (let orderItem of order) {
+  for (let orderItem of items) {
     const { bricklinkId, color } = await loadBricklinkid(orderItem.sku);
-    convertedOrder.push({ id: bricklinkId, color, quantity: orderItem.quantity });
+    if (bricklinkId) convertedOrder.push({ id: bricklinkId, color, quantity: orderItem.quantity });
 
     await new Promise((resolve) => setTimeout(resolve, 1000));
   }
@@ -34,8 +41,8 @@ const convert = async (order) => {
   return convertedOrder;
 };
 
-const parseOrder = ({ items }) => {
-  return convert(items);
+const parseOrder = ({ data }) => {
+  return convert(data);
 };
 
 module.exports = { parseOrder };

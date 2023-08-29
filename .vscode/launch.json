@@ -11,7 +11,7 @@
       "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}\\index.js",
       "outFiles": ["${workspaceFolder}/**/*.js"],
-      "args": ["--order=./samples/order.json"]
+      "args": ["--order=./samples/order.json", "--output=./output.xml", "--apiKey=123"]
     }
   ]
 }

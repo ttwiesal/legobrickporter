@@ -1,5 +1,3 @@
-const fs = require('fs');
-
 const parseToXml = (data) => {
   const content = data.reduce((acc, item) => {
     const { id, quantity, color } = item;
@@ -11,11 +9,7 @@ const parseToXml = (data) => {
 const generateBricklinkXml = (data) => {
   const content = parseToXml(data);
 
-  fs.writeFile('./output.xml', content, (err) => {
-    if (err) {
-      console.error(err);
-    }
-  });
+  return content;
 };
 
 module.exports = generateBricklinkXml;
