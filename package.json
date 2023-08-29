@@ -23,5 +23,10 @@
   "bugs": {
     "url": "https://github.com/ttwiesal/legobrickporter/issues"
   },
-  "homepage": "https://github.com/ttwiesal/legobrickporter#readme"
+  "homepage": "https://github.com/ttwiesal/legobrickporter#readme",
+  "devDependencies": {
+    "@types/jest": "^29.5.4",
+    "jest": "^29.6.4",
+    "prettier": "^3.0.2"
+  }
 }
