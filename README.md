@@ -19,11 +19,11 @@ node .\index.js --order=.\input\order.json --output=.\output\order.xml --apiKey=
 
 ## Running unit tests
 
-Run `npm run test` to execute the unit tests via [Jest](https://jestjs.io/).
+Run `npm test` to execute the unit tests via [Jest](https://jestjs.io/).
 
 ## Linting
 
-Run `npm run lint` to lint the project using [ESLint](https://eslint.org/).
+Run `npm lint` to lint the project using [ESLint](https://eslint.org/).
 
 ## License
 
