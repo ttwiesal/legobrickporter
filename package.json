@@ -1,0 +1,27 @@
+{
+  "name": "legobrickporter",
+  "version": "1.0.0",
+  "description": "converts lego order json to bricklink import xml.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js --order=./samples/order.json",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ttwiesal/legobrickporter.git"
+  },
+  "keywords": [
+    "lego",
+    "bricklink",
+    "xml",
+    "import"
+  ],
+  "author": "Alexander Wiesinger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ttwiesal/legobrickporter/issues"
+  },
+  "homepage": "https://github.com/ttwiesal/legobrickporter#readme"
+}
