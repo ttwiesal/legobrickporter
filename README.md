@@ -1,3 +1,4 @@
+[![CI](https://github.com/ttwiesal/legobrickporter/actions/workflows/ci.yml/badge.svg)](https://github.com/ttwiesal/legobrickporter/actions/workflows/ci.yml)
 # legobrickporter
 
 Converts lego order to bricklink xml import format.
