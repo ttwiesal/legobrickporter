@@ -1,4 +1,5 @@
 [![CI](https://github.com/ttwiesal/legobrickporter/actions/workflows/ci.yml/badge.svg)](https://github.com/ttwiesal/legobrickporter/actions/workflows/ci.yml)
+
 # legobrickporter
 
 Converts lego order to bricklink xml import format.
@@ -24,7 +25,7 @@ Run `npm test` to execute the unit tests via [Jest](https://jestjs.io/).
 
 ## Linting
 
-Run `npm lint` to lint the project using [ESLint](https://eslint.org/).
+Run `npm run lint` to lint the project using [ESLint](https://eslint.org/).
 
 ## License
 
