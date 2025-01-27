@@ -30,7 +30,7 @@
   "homepage": "https://github.com/ttwiesal/legobrickporter#readme",
   "devDependencies": {
     "@types/jest": "^29.5.14",
-    "eslint": "^8.57.1",
+    "eslint": "^9.19.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-n": "^16.6.2",
