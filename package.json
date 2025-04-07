@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/ttwiesal/legobrickporter#readme",
   "devDependencies": {
-    "@eslint/js": "^9.23.0",
+    "@eslint/js": "^9.24.0",
     "@types/jest": "^29.5.14",
     "eslint": "^9.23.0",
     "globals": "^16.0.0",
